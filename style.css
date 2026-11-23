@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  background-image: url("./img/carro.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav div { display: flex; gap: 14px; }   /* os 2 logos */
+nav img { height: 32px; }
+
+nav ul { display: flex; gap: 44px; list-style: none; }
+
+nav a {
+  color: rgba(255,255,255,.85);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+nav > a {                               
+  padding: 10px 32px;
+  border: 1px solid rgba(255,255,255,.55);
+}
+
+button { display: none; }
+
+/* ===== TEXTO ===== */
+h1 {
+  margin-top: 2vh;
+  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  color: rgba(255,255,255,.85);
+}
+
+p {
+  max-width: 720px;
+  margin-top: 14px;
+  padding: 0 24px;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,.72);
+}
+
+/* ===== PLATAFORMAS ===== */
+footer {
+  margin-top: auto;
+  padding: 32px 16px 28px;
+  display: flex;
+  align-items: center;
+  gap: clamp(32px, 9vw, 120px);
+}
+
+footer img { height: 20px; }
+
+footer strong {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(255,255,255,.9);
+}
+
+/* ===== iPad mini (744px) ===== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  header { background-position: 58% bottom; }
+
+  nav { padding: 20px 4vw; }
+  nav ul { gap: 3.2vw; }
+  nav a { font-size: clamp(12px, 1.9vw, 15px); }
+  nav > a { padding: 10px 3vw; }
+
+  h1 { margin-top: 4vh; font-size: 8.3vw; }
+  p { max-width: 84%; margin-top: 6px; padding: 0; font-size: 2.9vw; line-height: 1.5; }
+
+  footer { gap: 8vw; }
+  footer img { height: clamp(16px, 2.4vw, 22px); }
+  footer strong { font-size: clamp(16px, 2.4vw, 22px); }
+}
+
+
+@media (max-width: 600px) {
+  header { background-position: 60% bottom; }
+
+  nav { padding: 16px; }
+  nav img { height: 40px; }
+  nav ul, nav > a { display: none; }    
+
+  button {                              
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    border: 0;
+    background: none;
+  }
+  button span {
+    display: block;
+    width: 30px;
+    height: 8px;
+    border: 1.5px solid rgba(255,255,255,.9);
+    border-radius: 8px;
+    background: rgba(20,8,30,.45);
+}
+
+  h1 { margin-top: 5vh; font-size: 8vw; }
+  p { display: none; }
+
+  footer { width: 100%; justify-content: space-between; padding: 24px 12vw; }
+  footer img { height: 16px; }
+  footer strong { font-size: 16px; }
+}
+
+
+@media (max-width: 340px) {
+  footer { padding-left: 8vw; padding-right: 8vw; }
+  footer img { height: 13px; }
+  footer strong { font-size: 13px; }
+}
